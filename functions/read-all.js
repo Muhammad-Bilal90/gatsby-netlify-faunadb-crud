@@ -5,9 +5,9 @@ dotenv.config();
 const { Client, query } = require('faunadb')
 
 const client = new Client({
-  secret: process.env.FAUNADB_ADMIN_SECRET,
+  secret: `fnAEwY1_TCACTJkmXAX2R61NaaL-s3gS0vNu36xF`,
 })
-
+// process.env.FAUNADB_ADMIN_SECRET
 const handler = async () => {
   console.log('Function `read-all` invoked')
 
