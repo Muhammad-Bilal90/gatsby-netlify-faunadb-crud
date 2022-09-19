@@ -16,8 +16,15 @@
   },
   "license": "0BSD",
   "dependencies": {
-    "gatsby": "^4.22.1",
+    "bootstrap": "^5.2.1",
+    "dotenv": "^16.0.2",
+    "faunadb": "^4.6.0",
+    "formik": "^2.2.9",
+    "gatsby": "^4.23.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-bootstrap": "^2.5.0",
+    "react-bootstrap-icons": "^1.8.4",
+    "react-dom": "^18.1.0",
+    "yup": "^0.32.11"
   }
 }
