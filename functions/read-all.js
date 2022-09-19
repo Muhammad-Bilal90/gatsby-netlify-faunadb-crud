@@ -5,14 +5,15 @@ require("dotenv").config({
 })
 const { Client, query } = require('faunadb')
 
-const client = new Client({
-  secret: process.env.FAUNADB_ADMIN_SECRET,
-})
 // process.env.FAUNADB_ADMIN_SECRET
 const handler = async () => {
   console.log('Function `read-all` invoked')
-
+  
   try {
+    const client = new Client({
+      secret: process.env.FAUNADB_ADMIN_SECRET,
+    })
+    
     const response = await client.query(query.Paginate(query.Match(query.Index('all_students'))))
     const itemRefs = response.data
     // create new query out of item refs. http://bit.ly/2LG3MLg
