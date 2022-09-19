@@ -1,5 +1,5 @@
 /* Import faunaDB sdk */
-const process = require('process')
+// const process = require('process')
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
