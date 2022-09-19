@@ -1,11 +1,12 @@
 /* Import faunaDB sdk */
-// const process = require('process')
-const dotenv = require("dotenv");
-dotenv.config();
+const process = require('process')
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 const { Client, query } = require('faunadb')
 
 const client = new Client({
-  secret: `fnAEwY1_TCACTJkmXAX2R61NaaL-s3gS0vNu36xF`,
+  secret: process.env.FAUNADB_ADMIN_SECRET,
 })
 // process.env.FAUNADB_ADMIN_SECRET
 const handler = async () => {
