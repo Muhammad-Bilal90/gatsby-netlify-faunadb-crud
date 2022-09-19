@@ -5,12 +5,12 @@ require("dotenv").config();
 const { Client, query } = require('faunadb')
 
 const createFaunaDB = async function () {
-  if (!process.env.FAUNADB_ADMIN_SECRET) {
-    console.log('No FAUNADB_SERVER_SECRET in environment, skipping DB setup')
-  }
+  // if (!process.env.FAUNADB_ADMIN_SECRET) {
+  //   console.log('No FAUNADB_SERVER_SECRET in environment, skipping DB setup')
+  // }
   console.log('Create the database!')
   const client = new Client({
-    secret: process.env.FAUNADB_ADMIN_SECRET,
+    secret: `fnAEwY1_TCACTJkmXAX2R61NaaL-s3gS0vNu36xF`,
   })
 
   /* Based on your requirements, change the schema here */

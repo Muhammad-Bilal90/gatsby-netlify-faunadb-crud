@@ -13,7 +13,9 @@ const handler = async () => {
   console.log('Function `read-all` invoked')
   
   try {
-    const client = new Client({ secret: process.env.FAUNADB_ADMIN_SECRET });
+    const client = new Client({
+      secret: `fnAEwY1_TCACTJkmXAX2R61NaaL-s3gS0vNu36xF`,
+    })
     
     const response = await client.query(query.Paginate(query.Match(query.Index('all_students'))))
     const itemRefs = response.data
