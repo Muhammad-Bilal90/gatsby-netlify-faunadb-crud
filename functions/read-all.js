@@ -1,6 +1,7 @@
 /* Import faunaDB sdk */
 // const process = require('process')
-// const dotenv = require("dotenv");
+const dotenv = require('dotenv');
+dotenv.config();
 // dotenv.config({
 //   path: `.env.${process.env.NODE_ENV}`,
 // })
@@ -12,9 +13,7 @@ const handler = async () => {
   console.log('Function `read-all` invoked')
   
   try {
-    const client = new Client({
-      secret: process.env.FAUNADB_ADMIN_SECRET,
-    })
+    const client = new Client({ secret: process.env.FAUNADB_ADMIN_SECRET });
     
     const response = await client.query(query.Paginate(query.Match(query.Index('all_students'))))
     const itemRefs = response.data
