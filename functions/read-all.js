@@ -13,7 +13,7 @@ const handler = async () => {
   
   try {
     const client = new Client({
-      secret: `fnAEwY1_TCACTJkmXAX2R61NaaL-s3gS0vNu36xF`,
+      secret: process.env.FAUNADB_ADMIN_SECRET,
     })
     
     const response = await client.query(query.Paginate(query.Match(query.Index('all_students'))))
