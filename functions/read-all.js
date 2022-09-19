@@ -1,8 +1,10 @@
 /* Import faunaDB sdk */
 // const process = require('process')
-require("dotenv").config({
+const dotenv = require("dotenv");
+dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+
 const { Client, query } = require('faunadb')
 
 // process.env.FAUNADB_ADMIN_SECRET
