@@ -5,7 +5,7 @@ dotenv.config();
 const { Client, query } = require('faunadb')
 
 const client = new Client({
-  secret: `fnAEwY1_TCACTJkmXAX2R61NaaL-s3gS0vNu36xF`,
+  secret: process.env.FAUNADB_ADMIN_SECRET,
 })
 
 const handler = async (event) => {

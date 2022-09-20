@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 // const process = require('process')
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
 /* bootstrap database in your FaunaDB account - use with `netlify dev:exec <path-to-this-file>` */
 const { Client, query } = require('faunadb')
 
 const createFaunaDB = async function () {
-  // if (!process.env.FAUNADB_ADMIN_SECRET) {
-  //   console.log('No FAUNADB_SERVER_SECRET in environment, skipping DB setup')
-  // }
+  if (!process.env.FAUNADB_ADMIN_SECRET) {
+    console.log('No FAUNADB_SERVER_SECRET in environment, skipping DB setup')
+  }
   console.log('Create the database!')
   const client = new Client({
-    secret: `fnAEwY1_TCACTJkmXAX2R61NaaL-s3gS0vNu36xF`,
+    secret: process.env.FAUNADB_ADMIN_SECRET,
   })
 
   /* Based on your requirements, change the schema here */

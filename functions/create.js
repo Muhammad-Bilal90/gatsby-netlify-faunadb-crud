@@ -1,10 +1,11 @@
 // const process = require('process')
+const dotenv = require("dotenv");
+dotenv.config();
 const { Client, query } = require('faunadb')
-require("dotenv").config();
 
 /* configure faunaDB Client with our secret */
 const client = new Client({
-  secret: `fnAEwY1_TCACTJkmXAX2R61NaaL-s3gS0vNu36xF`,
+  secret: process.env.FAUNADB_ADMIN_SECRET,
 })
 console.log("Process" ,process.env)
 /* export our lambda function as named "handler" export */
